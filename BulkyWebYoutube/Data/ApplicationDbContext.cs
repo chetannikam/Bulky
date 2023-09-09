@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BulkyWebYoutube.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BulkyWebYoutube.Data
 {
@@ -8,5 +9,6 @@ namespace BulkyWebYoutube.Data
         {
             
         }
+        public DbSet<Category>Categories { get; set; }
     }
 }
