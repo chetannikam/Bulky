@@ -10,5 +10,18 @@ namespace BulkyWebYoutube.Data
             
         }
         public DbSet<Category>Categories { get; set; }
+
+        /// <summary>
+        /// to pass some data to database onModeCreating is used
+        /// </summary>
+        /// <param name="modelBuilder"></param>
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Category>().HasData(
+                new Category { Id = 1, Name = "Action", DisplayOrder = 3 },
+                new Category { Id = 2, Name = "Suspense", DisplayOrder = 1 },
+                new Category { Id = 3, Name = "Comedy", DisplayOrder = 2 }
+                );
+        }
     }
 }
