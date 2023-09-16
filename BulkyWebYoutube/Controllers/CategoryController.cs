@@ -31,6 +31,7 @@ namespace BulkyWebYoutube.Controllers
             {
                 _db.Categories.Add(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Category Created Successfully";
                 return RedirectToAction("Index", "Category");
             }
             else
@@ -61,6 +62,7 @@ namespace BulkyWebYoutube.Controllers
             {
                 _db.Categories.Update(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Category Updated Successfully";
                 return RedirectToAction("Index", "Category");
             }
             else
@@ -76,6 +78,7 @@ namespace BulkyWebYoutube.Controllers
                 return NotFound();
             }
             var category = _db.Categories.FirstOrDefault(u => u.Id == Id);
+
             return View(category);
         }
         [HttpPost,ActionName("Delete")]
@@ -94,6 +97,7 @@ namespace BulkyWebYoutube.Controllers
                 {
                     _db.Categories.Remove(categoryFromDB);
                     _db.SaveChanges();
+                    TempData["success"] = "Category Deleted Successfully";
                     return RedirectToAction("Index", "Category");
                 }
                 else

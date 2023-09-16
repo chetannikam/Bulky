@@ -1,5 +1,9 @@
 ﻿@model List<Category>
 
+    @if(TempData["success"]!=null && TempData["success"]!="")
+    {
+    <h2 style="color:darkcyan">@TempData["success"]</h2>
+    }
     <div class="container">
         <div class="row">
             <div class="col-6 pt-4 pb-3">
