@@ -10,7 +10,7 @@ namespace BulkyWebYoutube.Models
         [Required]
         [DisplayName("Category Name")]
         [MaxLength(50)]
-        public string Name { get; set; }
+        public string ?Name { get; set; }
         [Range(1,100)]
         [DisplayName("Display Order")]
         public int DisplayOrder { get; set; }
